@@ -12,7 +12,7 @@ npm start
 
 ## Snack Expo(demo)
 
-- https://snack.expo.io/@git/github.com/mitsuruog/react-native-dropdownalert-router-sample
+- https://snack.expo.io/@mitsuruog/cmVhY3
 
 ![demo](./demo/demo.gif)
 
