@@ -1,15 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
-import DropdownAlert from 'react-native-dropdownalert';
+import { View, StyleSheet, Button, Text } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export const Home = () => (
   <View style={styles.container}>
-    <Text>Home</Text>
+    <Text>react-native-dropdownalert + react-native-router-flux</Text>
     <Button
-      title="Press to show the ZAN-NEN Alert"
-      onPress={() => this.dropdown.alertWithType('error', 'Error', 'Alert shows inside ;(')}
+      title="Page 1"
+      onPress={Actions.page_1}
     />
-    <DropdownAlert ref={ref => this.dropdown = ref} />
+    <Button
+      title="Page 2"
+      onPress={Actions.page_2}
+    />
+    <Button
+      title="Page 3"
+      onPress={Actions.page_3}
+    />
   </View>
 );
 
@@ -17,7 +24,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
+    padding: 20,
   },
 });

@@ -4,24 +4,18 @@ import { Router, Overlay, Modal, Lightbox, Stack, Scene, Tabs } from 'react-nati
 import { Home } from './pages/Home';
 import { One } from './pages/One';
 import { Two } from './pages/Two';
+import { Three } from "./pages/Three";
 
 export const AppRoute = () => (
   <Router>
     <Overlay key="overlay">
       <Modal key="modal">
         <Lightbox key="lightbox" hideNavBar>
-          <Stack key="root" hideNavBar>
-            <Tabs key="tabs">
-              <Stack key="tabs_1">
-                <Scene key="page_home" component={Home} />
-              </Stack>
-              <Stack key="tabs_2">
-                <Scene key="page_one" component={One}/>
-              </Stack>
-              <Stack key="tabs_3">
-                <Scene key="page_two" component={Two}/>
-              </Stack>
-            </Tabs>
+          <Stack key="root">
+            <Scene key="page_home" component={Home} hideNavBar />
+            <Scene key="page_1" component={One} />
+            <Scene key="page_2" component={Two} />
+            <Scene key="page_3" component={Three} />
           </Stack>
         </Lightbox>
       </Modal>

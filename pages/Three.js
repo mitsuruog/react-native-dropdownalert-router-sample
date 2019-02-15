@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import DropdownAlert from 'react-native-dropdownalert';
 
-export const One = () => (
+import { AlertHelper } from './AlertHelper';
+
+export const Three = () => (
   <View style={styles.container}>
-    <Text>One</Text>
+    <Text>Three</Text>
     <Button
-      title="Press to show the ZAN-NEN Alert"
-      onPress={() => this.dropdown.alertWithType('error', 'Error', 'Alert shows inside ;(')}
+      title="Press to show the Info"
+      onPress={() => AlertHelper.show('info', 'Info', 'Looks good!!')}
     />
-    <DropdownAlert ref={ref => this.dropdown = ref} />
   </View>
 );
 

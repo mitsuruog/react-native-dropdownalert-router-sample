@@ -1,8 +1,36 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
-export const Two = () => (
-  <View>
-    <Text>Two</Text>
-  </View>
-);
+import { AlertHelper } from './AlertHelper';
+
+export class Two extends React.Component {
+
+  componentDidMount() {
+    AlertHelper.setOnClose(() => { alert('Hi, I am onClose') });
+  }
+
+  componentWillUnmount() {
+    AlertHelper.setOnClose(() => undefined);
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Two(Get onClose callback)</Text>
+        <Button
+          title="Press to show the Warning"
+          onPress={() => AlertHelper.show('warn', 'Warning', 'Close to get the close event.')}
+        />
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
